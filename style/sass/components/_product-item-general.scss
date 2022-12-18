@@ -18,7 +18,7 @@
     align-items: center;
     transition: all linear .3s;
     &:hover{
-        background-color: $main-color;
+        background-color: $second-color;
         i {
             color: #fff;
         }
@@ -43,7 +43,7 @@
         color: #000000;
         // line-height: 40px;
         text-align: center;
-        font-weight: bold;
+        font-weight: 400;
         text-transform: capitalize;
         display: -webkit-box;
         -webkit-line-clamp: 1;
@@ -65,7 +65,7 @@
     .current-price{
         font-size: 16px;
         color: #519356;
-        font-weight: bold;
+        font-weight: 700;
         text-align: right;
         margin-bottom: 0;
         margin-inline-end: 7px;

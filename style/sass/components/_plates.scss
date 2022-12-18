@@ -6,12 +6,6 @@
     align-items: center;
     justify-content: center;
 }
-.plate-holder{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 .plate-item:first-child{
     margin-inline-end: 100px;
 }
@@ -32,7 +26,10 @@ transition: all linear .2s;
 margin-top: 20px;
 text-transform: capitalize;
 &:hover{
-    color: $main-color;
+    color: #000;
+}
+&:focus{
+    text-decoration: none;
 }
 }
 
@@ -53,5 +50,14 @@ text-transform: capitalize;
     .plate-name{
         font-size: 16px;
         margin-top: 15px;
+    }
+}
+
+
+@include min-768 {
+    .plate-name{
+        &:hover{
+            color: $main-color;
+        }
     }
 }

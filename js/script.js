@@ -204,9 +204,11 @@ openBtn.addEventListener("click" , function(){
 
 // open language menu
 
-$(".arabic").click(function(){
-  $(".lang-details").toggleClass("show-lang") ;
-})
+if($(window).width() > 768){
+  $(".arabic").click(function(){
+    $(".lang-details").toggleClass("show-lang") ;
+  })
+}
 
 
 // **************************************************************************************************
@@ -233,7 +235,8 @@ $(".toTop").click(function(){
 // let element = document.querySelectorAll(".quick-drop") ;
 
 if($(window).width() < 768){
-$(".footer-title").click(function(){
+$(".footer-title").click(function(e){
+  e.preventDefault() ;
   $(this).next().slideToggle(300) ; 
   $(this).toggleClass("arrow-rotate");
   $(".footer-title").not($(this)).next().slideUp(300);
@@ -253,62 +256,55 @@ new WOW().init();
 
 // **************************************************************************************************
 
-// plates hover 
 
-let plates = document.querySelectorAll(".plate-name") ; 
-if($(window).width() > 768) {
-  for(let i = 0 ; i< plates.length ; i++) {
-    plates[i].addEventListener("mouseover" , function(){
-       plates[i].previousElementSibling.children[0].style.transform = "translateY(-20px)"  ;
-    })
-    plates[i].addEventListener("mouseleave" , function(){
-      plates[i].previousElementSibling.children[0].style.transform = "translateY(0px)"  ;
-   })
+// fixed nav with scroll top in mobile\
+$(".search").css("display" , "block");
+$(".open-search-btn").css("display" , "none") ;
+
+function scrollDetect(element){
+  var lastScroll = 0;
+  if(element == 'nav'){
+   $(element).css("background-color" , "#519356") ;
   }
+  window.onscroll = function() {
+   
+      let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
+      if (currentScroll  - lastScroll >= 500 ){
+        lastScroll = currentScroll;
+      $(element).addClass("scroll-down-fixed");
+      $(element).removeClass("scroll-top-fixed");
+      }else if(currentScroll  - lastScroll <= 0){
+        lastScroll = currentScroll;
+       $(element).addClass("scroll-top-fixed");
+       $(".search").css("display" , "none");
+       $(".open-search-btn").css("display" , "block") ;
+       $(".open-search-btn i").removeClass("la-times") ;
+       $("header").css("box-shadow" , "rgba(0, 0, 0, 0.24) 0px 3px 8px")
+      } 
+
+      if (document.documentElement.scrollTop == 0) {
+       
+        $(element).removeClass("scroll-down-fixed");
+        $(element).removeClass("scroll-top-fixed");
+        $(".search").css("display" , "block");
+        $(".open-search-btn").css("display" , "none") ;
+        $("header").css("box-shadow" , "none");
+
+      }
+  };
+}
+
+if($(window).width() < 768) {
+  scrollDetect("header");
 }
 
 
-// **************************************************************************************************
-
-// fixed nav with scroll top in mobile
-
-// function scrollDetect(element){
-//   var lastScroll = 0;
-//   if(element == 'nav'){
-//    $(element).css("background-color" , "#519356") ;
-//   }
-//   window.onscroll = function() {
-   
-//       let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-//       if (currentScroll  - lastScroll >= 500 ){
-//         lastScroll = currentScroll;
-//       $(element).addClass("scroll-down-fixed");
-//       $(element).removeClass("scroll-top-fixed");
-//       }else if(currentScroll  - lastScroll <= 0){
-//         lastScroll = currentScroll;
-//        $(element).addClass("scroll-top-fixed");
-//       } 
-
-//       if (document.documentElement.scrollTop == 0) {
-//         // lastScroll = currentScroll;
-//         $(element).removeClass("scroll-down-fixed");
-//         $(element).removeClass("scroll-top-fixed");
-//         console.log("yes")
-//       }
-//   };
-// }
-
-// if($(window).width() < 768) {
-//   scrollDetect("header");
-// }
+if($(window).width() > 768) {
+  scrollDetect("nav");
+}
 
 
-// if($(window).width() > 768) {
-//   scrollDetect("nav");
-// }
 
-
-// fixed nav with scroll top in big screens
 
 
 
@@ -323,12 +319,4 @@ $(".open-search-btn").click(function(){
   // $(this).children().addClass("");
 })
 
-// $(".closeSearh-btn").click(function(){
-//     $(".search-holder-input").removeClass("open-search");
-   
-//   setTimeout(() => {
-//     $(".search-holder-parent").fadeToggle(300);
-//   }, 200);
-//   $("body").css("overflow" , "visible") ;
- 
-// })
+

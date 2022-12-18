@@ -21,10 +21,3 @@
 }
 
 
-@include min-992{
-    .saleItem {
-        img:hover{
-            transform: scale(1.020) translateY(-20px);
-        }
-    }
-}

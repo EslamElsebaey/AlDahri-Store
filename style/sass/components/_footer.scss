@@ -6,8 +6,8 @@ footer{
     }
     .footer-title{
         font-size: 14px;
-        color: #0056b8;
-        font-weight: bold;
+        color: #000;
+        font-weight: 700;
         margin-bottom: 25px;
         text-transform: capitalize;
     }
@@ -26,7 +26,6 @@ html[dir = "ltr"]{
     }
 }
 .logo-info {
-    margin: 0 0 15px 0 ;
     img {
         width: 165px;
         max-width: 100%;
@@ -60,13 +59,13 @@ html[dir = "ltr"]{
 .quick-links {
 ul li {
     font-size: 16px;
-    line-height: 31px;
+    line-height: 27px;
    a{
     color: #000000;
     text-transform: capitalize;
     transition: all linear .2s;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 400;
     &:hover{
         color: $main-color;
     }
@@ -86,7 +85,7 @@ ul li {
 .newsletter{
     .newsletter-text{
         font-size: 14px;
-        font-weight: bold;
+        font-weight: 400;
         margin: 0;
         margin-top: 10px;
         margin-bottom: 20px;
@@ -103,7 +102,7 @@ ul li {
         font-size: 14px;
         color: #ffffff;
         text-transform: capitalize;
-        font-weight: bold;
+        font-weight: 700;
         width: 87px;
         height: 32px;
         border-radius: 16px;
@@ -139,7 +138,8 @@ ul li {
              }
         &::-webkit-input-placeholder{
             color: #a6a6a6;
-            font-size: 15px;
+            font-size: 12px;
+            font-weight: 300;
         }
         &:focus{
             border-color: $main-color !important;
@@ -171,9 +171,9 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 40px;
+    margin-top: 75px;
     p{
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 400;
         color: #000000;
     }
@@ -200,6 +200,12 @@ img{
 
 
 @include max-768 {
+    .social-footer{
+        margin-bottom: 20px;
+    }
+    .social-newsletter{
+        display: none;
+    }
     .footer-items{
         flex-direction: column;
         .img-item{
@@ -209,6 +215,9 @@ img{
         .footer-item{
             width: 100%;
         }
+    }
+    .newsletter .newsletter-text{
+        text-align: center;
     }
    
     .quick-links{
@@ -240,7 +249,7 @@ img{
         display: none;
     }
     .copyright{
-        margin-top: 30px;
+        margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
         a{
@@ -256,13 +265,22 @@ img{
             margin-inline-start: 5px;
         }
     }
-   
-    .message input{
-       
-        &::placeholder{
-            font-size: 13px;
+    .social {
+        i:hover{
+            color: #b3b3b3;
         }
     }
+   
+    .message{
+        width: 100%;
+        input{
+            width: 100%;
+             &::placeholder{
+                 font-size: 13px;
+             }
+         }
+    }
+     
    
     .quick-links ul li{
         font-size: 14px;
@@ -336,10 +354,24 @@ img{
 
 @include max-992 {
     .social{
-        justify-content: flex-start;
+        justify-content: center;
         a{
             margin: 0;
-            margin-inline-end: 35px;
+           margin: 0 16px;
         }
     }
+   
 }
+
+@include min-768 {
+    .social-footer{
+        display: none;
+    }
+    .img-item{
+        transform: translateY(-45px);
+    }
+    .partners{
+        margin-top: 20px;
+    }
+}
+
