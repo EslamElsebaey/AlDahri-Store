@@ -1,0 +1,57 @@
+.plates{
+    padding: 70px 0;
+}
+.plates-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plate-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.plate-item:first-child{
+    margin-inline-end: 100px;
+}
+.plate-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .plate{
+        transition: all linear .3s;
+    }
+}
+.plate-name{
+font-size: 18px;
+color: #000000;
+text-align: center;
+transition: all linear .2s;
+margin-top: 20px;
+text-transform: capitalize;
+&:hover{
+    color: $main-color;
+}
+}
+
+
+@include max-768 {
+    .plate-item:first-child{
+        margin-inline-end: 0px;
+    }
+    .plate-item img {
+        width: 90px;
+    }
+    .plates{
+        padding: 50px 0;
+    }
+    .plates-parent{
+        justify-content: space-evenly;
+    }
+    .plate-name{
+        font-size: 16px;
+        margin-top: 15px;
+    }
+}

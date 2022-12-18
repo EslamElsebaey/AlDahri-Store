@@ -1,0 +1,303 @@
+
+body {
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'RB' ;
+  // overflow: hidden;
+}
+*{
+  margin: 0 ;
+  padding: 0;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p {
+  margin: 0;
+  padding: 0;
+}
+
+html[dir = "rtl"] {
+  body{
+    text-align: right;
+  }
+}
+.item-parent{
+  position: relative;
+}
+
+
+.title-text {
+  font-size: 18px;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+
+img {
+  image-rendering: -webkit-optimize-contrast !important;
+  object-fit: cover;
+}
+
+.ul-es {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.swiper-button-prev::after, .swiper-rtl .swiper-button-next::after{
+  content: "";
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+  content: "";
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+  position: absolute;
+  left: -50px;
+  i{
+    font-size: 24px;
+    color: #b3b3b3;
+    text-align: center;
+  }
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+  i{
+    font-size: 24px;
+    color: #b3b3b3;
+    text-align: center;
+  }
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+  position: absolute;
+  right: -50px;
+}
+.ancor-es{
+  text-decoration: none;
+  color: #000;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.btn_es {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background:  $second-color;
+}
+
+::-webkit-scrollbar-track{
+  background-color:  $main-color;
+}
+
+
+// preloader
+
+#preloader{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  // inset: 0;
+  z-index: 999 ; 
+  // background-color: $main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // transition: all linear .8s;
+  img{
+    transition: all linear .3s;
+    width: 140px;
+    height: 113px;
+    position: relative;
+    z-index: 9999;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: var(--afterTop,0);
+    left: 0;
+    width: 100%;
+    transition: all linear 1s;
+    height: 50vh;
+    background-color: $main-color;
+    z-index: 999;
+    
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    bottom: var(--afterBottom,0);
+    left: 0;
+    width: 100%;
+    transition: all linear 1s;
+    height: 50vh;
+    background-color: $main-color;
+    z-index: 999;
+  }
+}
+
+
+// back-up
+.toTop{
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  right: 25px;
+  bottom: 92px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  z-index: 99;
+  transition: all linear .3s;
+  opacity: 0;
+  visibility: hidden;
+  &:hover{
+      background-color: $second-color;
+      .toTop-icon{
+        color: $white-color;
+      }
+  }
+  .toTop-icon{
+      font-size: 19px;
+      color: #000;
+      transition: all linear .2s;
+  }
+}
+
+.showToTop{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+// fixed whatsapp
+
+.fixed-whatsapp{
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 99;
+  width: 60px;
+height: 60px;
+border-radius: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #25d366;
+animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+  i {
+    font-size: 36px;
+color: #ffffff;
+  }
+}
+
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 #25d366;
+	}
+	80% {
+		box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+	}
+}
+
+
+
+
+
+@include max-768 {
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .title-text{
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+  .fixed-whatsapp{
+    width: 50px;
+    height: 50px;
+    i {
+      font-size: 30px;
+    }
+  }
+  .toTop{
+    right: 19px;
+    bottom: 80px;
+  }
+ 
+}
+
+@media screen and (min-width : 768px) and (max-width : 992px) {
+  .swiper-button-next, .swiper-rtl .swiper-button-prev{
+    right: 30px;
+  }
+  .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    left: 30px;
+  }
+
+.quick-drop{
+  max-height: none;
+}
+
+.contact ul li a{
+  font-size: 16px;
+}
+footer h4{
+  font-size: 16px;
+}
+.message input{
+  padding-left:  25px;
+  padding-right: 25px;
+}
+.copyright{
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+}
+
+
+@include min-1200{
+  .container, .container-lg, .container-md, .container-sm, .container-xl{
+    max-width: 1170px;
+  }
+}
+
+@include max-992 {
+  .swiper-button-prev, .swiper-rtl .swiper-button-next , .swiper-button-next, .swiper-rtl .swiper-button-prev{
+    display: none;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    position: absolute;
+    bottom: -35px;
+  }
+  
+
+}
+
+@include min-992 {
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+    display: none;
+  }
+}

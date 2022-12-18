@@ -1,0 +1,80 @@
+// new Arrivals
+.newArrivals{
+    position: relative;
+    padding-bottom: 80px ;
+ }
+
+ @include max-768 {
+    .newArrivals {
+        padding-bottom: 80px;
+    }
+ }
+ //  *************************************************************************************************
+
+ 
+//  Bestseller
+.bestseller{
+    padding: 60px 0;
+    background-color: $main-color;
+    background-image: url(../images/shape.png);
+    background-repeat: no-repeat;
+    background-position: 48% 274%;
+    .title-text{
+        color: #fff;
+    }
+    .swiper-button-prev i, .swiper-rtl .swiper-button-next i{
+        opacity: 0.502;
+        font-size: 24px;
+        color: #ffffff;
+        text-align: center;
+    }
+}
+.item-desc{
+    background-color: #fff;
+}
+
+ 
+//  *************************************************************************************************
+ 
+
+// special offers
+
+.special-offers{
+    padding: 80px  0 ;
+    position: relative;
+}
+.item-parent{
+    position: relative;
+}
+
+
+//  *************************************************************************************************
+
+
+
+// general 
+
+
+ 
+ @include max-768 {
+    .bestseller , .special-offers  {
+        padding: 50px 0 80px 0;
+    }
+    .plates {
+        padding: 50px 0;
+    }
+ }
+
+
+ @include max-1200 {
+    .bestseller {
+        background-image: none;
+    }
+ }
+
+
+ .special-offers , .newArrivals , .clients-opinions {
+    .swiper-pagination-bullet-active {
+        background-color: $main-color;
+    }
+ }

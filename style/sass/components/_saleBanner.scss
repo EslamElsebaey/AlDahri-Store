@@ -1,0 +1,30 @@
+.saleBanner{
+    padding-bottom: 80px;
+    .saleItem{
+        position: relative;
+        width: 100%;
+        img{
+            width: 100%;
+            display: block;
+            transition: all linear .3s;
+           
+        }
+    }
+}
+
+
+
+@include max-768 {
+    .saleBanner {
+        padding-bottom: 50px;
+    }
+}
+
+
+@include min-992{
+    .saleItem {
+        img:hover{
+            transform: scale(1.020) translateY(-20px);
+        }
+    }
+}
