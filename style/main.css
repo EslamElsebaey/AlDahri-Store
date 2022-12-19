@@ -1048,7 +1048,7 @@ nav .top-header {
     margin: 6px 0;
   }
   .item-desc .brand-name {
-    font-size: 16px;
+    font-size: 14px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -1188,7 +1188,7 @@ nav .top-header {
     width: 90px;
   }
   .plates {
-    padding: 50px 0;
+    padding: 30px 0;
   }
   .plates-parent {
     justify-content: space-evenly;
@@ -1808,9 +1808,6 @@ html[dir=ltr] .message input {
 @media only screen and (max-width: 767px) {
   .bestseller, .special-offers {
     padding: 50px 0 80px 0;
-  }
-  .plates {
-    padding: 50px 0;
   }
 }
 @media only screen and (max-width: 1199px) {
