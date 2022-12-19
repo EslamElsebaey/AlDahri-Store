@@ -89,8 +89,8 @@
 .search-icon{
     position: absolute;
     inset-inline-end: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 55%;
+    transform: translateY(-55%);
     border: none;
     background: transparent;
    i {
@@ -329,6 +329,13 @@ nav{
 }
 
 @media  (max-width : 768px) {
+    html[dir ="ltr"]{
+        .search-item input{
+            padding: 0 40px 0 15px;
+        }
+        
+    }
+    
     .search{
         margin-top: 10px;
     }
@@ -465,7 +472,7 @@ nav{
 }
 .bars , .search-icon{
     display: block;
-    inset-inline-end: 10px;
+    inset-inline-end: 15px;
 }
 .account-user .account-text{
     margin-inline-end: 0;

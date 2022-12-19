@@ -406,8 +406,8 @@ img {
 .search-icon {
   position: absolute;
   inset-inline-end: 5px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55%;
+  transform: translateY(-55%);
   border: none;
   background: transparent;
 }
@@ -639,6 +639,9 @@ nav .top-header {
   }
 }
 @media (max-width: 768px) {
+  html[dir=ltr] .search-item input {
+    padding: 0 40px 0 15px;
+  }
   .search {
     margin-top: 10px;
   }
@@ -771,7 +774,7 @@ nav .top-header {
   }
   .bars, .search-icon {
     display: block;
-    inset-inline-end: 10px;
+    inset-inline-end: 15px;
   }
   .account-user .account-text {
     -webkit-margin-end: 0;
@@ -1742,7 +1745,7 @@ html[dir=ltr] .message input {
   background-color: #519356;
   background-image: url(../images/shape.png);
   background-repeat: no-repeat;
-  background-position: 48% 274%;
+  background-position: 50% 233%;
 }
 .bestseller .title-text {
   color: #fff;
