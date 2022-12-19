@@ -261,21 +261,20 @@ new WOW().init();
 $(".search").css("display" , "block");
 $(".open-search-btn").css("display" , "none") ;
 
-function scrollDetect(element){
+
+
+if($(window).width() < 768){
+
   var lastScroll = 0;
-  if(element == 'nav'){
-   $(element).css("background-color" , "#519356") ;
-  }
   window.onscroll = function() {
-   
       let currentScroll = document.documentElement.scrollTop || document.body.scrollTop; // Get Current Scroll Value
-      if (currentScroll  - lastScroll >= 500 ){
+      if (currentScroll  - lastScroll >= 0 ){
         lastScroll = currentScroll;
-      $(element).addClass("scroll-down-fixed");
-      $(element).removeClass("scroll-top-fixed");
+      $("header").addClass("scroll-down-fixed");
+      $("header").removeClass("scroll-top-fixed");
       }else if(currentScroll  - lastScroll <= 0){
         lastScroll = currentScroll;
-       $(element).addClass("scroll-top-fixed");
+       $("header").addClass("scroll-top-fixed");
        $(".search").css("display" , "none");
        $(".open-search-btn").css("display" , "block") ;
        $(".open-search-btn i").removeClass("la-times") ;
@@ -284,19 +283,17 @@ function scrollDetect(element){
 
       if (document.documentElement.scrollTop == 0) {
        
-        $(element).removeClass("scroll-down-fixed");
-        $(element).removeClass("scroll-top-fixed");
+        $("header").removeClass("scroll-down-fixed");
+        $("header").removeClass("scroll-top-fixed");
         $(".search").css("display" , "block");
         $(".open-search-btn").css("display" , "none") ;
         $("header").css("box-shadow" , "none");
 
       }
   };
+
 }
 
-if($(window).width() < 768) {
-  scrollDetect("header");
-}
 
 
 
@@ -316,3 +313,13 @@ $(".open-search-btn").click(function(){
 })
 
 
+
+// **************************************************************************************************
+
+
+if($(window).width()  < 768 ) {
+  $(".account-btn").click(function(){
+    $(".account-details").toggleClass("show-account-details");
+    $(this).toggleClass("account-btn-color");
+  })
+}

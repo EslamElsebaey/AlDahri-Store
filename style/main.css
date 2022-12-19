@@ -338,8 +338,8 @@ img {
   padding: 10px 20px;
   z-index: 999;
   top: 30px;
+  width: 125px;
   inset-inline-start: -15px;
-  min-width: 120px;
   opacity: 0;
   visibility: hidden;
   transition: all linear 0.3s;
@@ -347,7 +347,7 @@ img {
 .lang .lang-details .ul-es {
   text-align: center;
 }
-.lang .lang-details ul li:first-child {
+.lang .lang-details ul li {
   margin-bottom: 8px;
 }
 .lang .lang-details a {
@@ -505,6 +505,14 @@ img {
   left: 14px;
 }
 
+.favourite i, .account-btn i {
+  transition: all linear 0.3s;
+}
+
+.account-btn-color {
+  color: #519356;
+}
+
 html[dir=ltr] .search-item input {
   padding: 0 40px 0 10px;
 }
@@ -567,7 +575,7 @@ nav .closeBtn {
 }
 
 header {
-  transition: linear 0.4s;
+  transition: all linear 0.4s;
 }
 
 nav {
@@ -591,21 +599,26 @@ nav .top-header {
 }
 
 .account-details {
-  position: absolute;
-  background-color: #fff;
   padding: 10px 20px;
-  top: 33px;
-  z-index: 999;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  inset-inline-start: -56px;
+  inset-inline-start: -51px;
   text-align: center;
-  min-width: 140px;
   opacity: 0;
+  width: 125px;
   visibility: hidden;
   transition: all linear 0.3s;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 10px 20px;
+  z-index: 999;
+  top: 34px;
+}
+.account-details li {
+  margin-bottom: 8px;
 }
 .account-details a {
   color: #000;
+  font-weight: 300;
 }
 .account-details a:hover {
   text-decoration: none;
@@ -614,7 +627,7 @@ nav .top-header {
   margin-bottom: 5px;
 }
 
-.account-text:hover .account-details {
+.show-account-details {
   opacity: 1;
   visibility: visible;
 }
@@ -639,6 +652,14 @@ nav .top-header {
   }
 }
 @media (max-width: 768px) {
+  .account-details {
+    inset-inline-start: -44px;
+    width: 115px;
+    padding: 8px 10px;
+  }
+  .account-details a {
+    font-size: 13px;
+  }
   html[dir=ltr] .search-item input {
     padding: 0 40px 0 15px;
   }
@@ -664,9 +685,6 @@ nav .top-header {
   }
   .favourite {
     display: none !important;
-  }
-  .account-details {
-    display: none;
   }
   .lang-details, .lang i {
     display: none;
@@ -810,6 +828,12 @@ nav .top-header {
   }
 }
 @media only screen and (min-width: 768px) {
+  .account-btn:hover {
+    color: #519356;
+  }
+  .favourite:hover i {
+    color: #519356;
+  }
   .lang:hover .lang-details {
     opacity: 1;
     visibility: visible;
@@ -819,6 +843,10 @@ nav .top-header {
   }
   .search {
     display: block !important;
+  }
+  .account-text:hover .account-details {
+    opacity: 1;
+    visibility: visible;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -998,8 +1026,15 @@ nav .top-header {
   .price .current-price, .price .deleted {
     font-size: 15px;
   }
+  .price .current-price {
+    -webkit-margin-end: 0;
+            margin-inline-end: 0;
+  }
   .item-desc {
     padding: 7px 6px;
+  }
+  .add {
+    height: 30px;
   }
   .add i {
     font-size: 20px;
@@ -1222,7 +1257,7 @@ nav .top-header {
 }
 
 .client-opinion {
-  height: 193px;
+  min-height: 150px;
   background-color: #ffffff;
   border: 2px solid #e8e9eb;
   padding: 20px;
@@ -1230,10 +1265,10 @@ nav .top-header {
 }
 
 .client-name {
-  font-size: 15px;
+  font-size: 14px;
   color: #000000;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .quote {
@@ -1249,8 +1284,8 @@ nav .top-header {
   margin-bottom: 10px;
 }
 .stars i {
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 10px;
+  letter-spacing: 0;
   line-height: 24px;
   color: #f5d12a;
 }
@@ -1259,8 +1294,8 @@ nav .top-header {
 }
 
 .opinion-text {
-  font-size: 15px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 22px;
   color: #666666;
   font-weight: 300;
 }
@@ -1383,7 +1418,7 @@ html[dir=ltr] .message input {
   max-width: 100%;
 }
 .message .subscribe {
-  font-size: 14px;
+  font-size: 12px;
   color: #ffffff;
   text-transform: capitalize;
   font-weight: 700;
@@ -1471,7 +1506,7 @@ html[dir=ltr] .message input {
   margin-top: 25px;
 }
 .social a {
-  margin: 0 20px;
+  margin: 0 15px;
 }
 .social i {
   font-size: 22px;

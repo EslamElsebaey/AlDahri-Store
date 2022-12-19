@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   width: 100%;
+    width: 100%;
     text-transform: capitalize;
     height: 36px;
     border-radius: 18px;
@@ -106,10 +106,14 @@
     .price .current-price , .price .deleted{
         font-size: 15px;
     }
+    .price .current-price {
+        margin-inline-end: 0;
+    }
     .item-desc{
         padding: 7px 6px;
     }
     .add{
+        height: 30px;
         i {font-size: 20px;}
         span {
             font-size: 14px;

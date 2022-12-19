@@ -2,17 +2,17 @@
     padding: 0  0  80px 0;
 }
 .client-opinion{
-height: 193px;
+min-height: 150px;
 background-color: #ffffff;
 border: 2px solid #e8e9eb;
 padding: 20px;
 position: relative;
 }
 .client-name{
-    font-size: 15px;
+    font-size: 14px;
     color: #000000;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 .quote{
     font-size: 60px;
@@ -26,8 +26,8 @@ position: relative;
 .stars {
     margin-bottom: 10px;
     i {
-        font-size: 12px;
-        letter-spacing: 2px;
+        font-size: 10px;
+        letter-spacing: 0;
         line-height: 24px;
         color: #f5d12a;
     }
@@ -36,8 +36,8 @@ position: relative;
     }
 }
 .opinion-text{
-font-size: 15px;
-line-height: 26px;
+font-size: 14px;
+line-height: 22px;
 color: #666666;
 font-weight: 300;
 // margin-bottom: 10px;
