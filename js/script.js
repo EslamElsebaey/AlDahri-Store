@@ -299,9 +299,6 @@ if($(window).width() < 768) {
 }
 
 
-if($(window).width() > 768) {
-  scrollDetect("nav");
-}
 
 
 
@@ -316,7 +313,6 @@ if($(window).width() > 768) {
 $(".open-search-btn").click(function(){
   $(".search").slideToggle(300);
   $(this).children().toggleClass("la-times");
-  // $(this).children().addClass("");
 })
 
 

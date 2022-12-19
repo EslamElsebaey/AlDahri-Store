@@ -854,7 +854,8 @@ nav .top-header {
 .banner-item img {
   display: block;
   width: 100%;
-  transition: all linear 0.3s;
+  transform: scale(1.19);
+  transition: all linear 0.2s;
 }
 
 @media screen and (max-width: 768px) {
@@ -879,6 +880,9 @@ nav .top-header {
   }
   .banner-item {
     text-align: center;
+  }
+  .banner-item:hover img {
+    transform: scale(1);
   }
 }
 .product-item {
@@ -920,7 +924,7 @@ nav .top-header {
   width: 100%;
   border: 2px solid #e8e9eb;
   border-top: none;
-  padding: 15px;
+  padding: 10px;
 }
 .item-desc .brand-name {
   text-align: center;
@@ -929,11 +933,6 @@ nav .top-header {
   text-align: center;
   font-weight: 400;
   text-transform: capitalize;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  margin-top: 5px;
 }
 
 .price {
@@ -942,10 +941,6 @@ nav .top-header {
   display: flex;
   align-items: center;
   line-height: 50px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
 }
 .price .current-price {
   font-size: 16px;
@@ -968,8 +963,7 @@ nav .top-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 235px;
-  max-width: 100%;
+  width: 100%;
   text-transform: capitalize;
   height: 36px;
   border-radius: 18px;
@@ -1001,6 +995,9 @@ nav .top-header {
   .price .current-price, .price .deleted {
     font-size: 15px;
   }
+  .item-desc {
+    padding: 7px 6px;
+  }
   .add i {
     font-size: 20px;
   }
@@ -1010,8 +1007,14 @@ nav .top-header {
   .price {
     flex-direction: column;
     line-height: normal;
-    margin-top: 7px;
-    margin-bottom: 10px;
+    margin: 6px 0;
+  }
+  .item-desc .brand-name {
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -1168,16 +1171,47 @@ nav .top-header {
 .saleBanner .saleItem {
   position: relative;
   width: 100%;
+  overflow: hidden;
+  display: block;
 }
 .saleBanner .saleItem img {
   width: 100%;
   display: block;
   transition: all linear 0.3s;
+  position: relative;
 }
 
 @media only screen and (max-width: 767px) {
   .saleBanner {
     padding-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .saleBanner .saleItem::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    transform: skewX(-25deg);
+  }
+  .saleBanner .saleItem:hover::before {
+    -webkit-animation: shine 0.75s;
+    animation: shine 0.75s;
+  }
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
   }
 }
 .clients-opinions {
@@ -1315,7 +1349,7 @@ html[dir=ltr] .message input {
   line-height: 27px;
 }
 .quick-links ul li a {
-  color: #000000;
+  color: #808080;
   text-transform: capitalize;
   transition: all linear 0.2s;
   font-size: 14px;
@@ -1424,7 +1458,7 @@ html[dir=ltr] .message input {
 .copyright p {
   font-size: 12px;
   font-weight: 400;
-  color: #000000;
+  color: #808080;
 }
 
 .social {

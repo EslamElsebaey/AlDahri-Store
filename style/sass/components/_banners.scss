@@ -17,7 +17,8 @@
     img{
         display: block;
         width: 100%;
-        transition:  all linear .3s;
+        transform: scale(1.19);
+        transition:  all linear .2s;
     }
 }
 
@@ -46,6 +47,11 @@
     }   
     .banner-item{
         text-align: center;
+        &:hover{
+            img{
+                transform: scale(1);
+            }
+        }
     }
   
 }

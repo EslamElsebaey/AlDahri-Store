@@ -35,21 +35,14 @@
     width: 100%;
     border: 2px solid #e8e9eb;
     border-top: none;
-    padding: 15px;
+    padding: 10px;
     .brand-name {
         text-align: center;
-        //  height: 40px;
         font-size: 14px;
         color: #000000;
-        // line-height: 40px;
         text-align: center;
         font-weight: 400;
         text-transform: capitalize;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        margin-top: 5px;
     }
 }
 .price{
@@ -58,10 +51,6 @@
     display: flex;
     align-items: center;
    line-height: 50px;
-   overflow: hidden;
-   display: -webkit-box;
-   -webkit-line-clamp: 1;
-   -webkit-box-orient: vertical;
     .current-price{
         font-size: 16px;
         color: #519356;
@@ -82,8 +71,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 235px;
-    max-width: 100%;
+   width: 100%;
     text-transform: capitalize;
     height: 36px;
     border-radius: 18px;
@@ -118,6 +106,9 @@
     .price .current-price , .price .deleted{
         font-size: 15px;
     }
+    .item-desc{
+        padding: 7px 6px;
+    }
     .add{
         i {font-size: 20px;}
         span {
@@ -127,8 +118,14 @@
     .price{
         flex-direction: column;
         line-height: normal;
-        margin-top: 7px;
-        margin-bottom: 10px;
+       margin: 6px 0;
+    }
+    .item-desc .brand-name{
+        font-size: 16px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
 }
 
