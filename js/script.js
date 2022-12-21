@@ -1,3 +1,6 @@
+
+$(document).ready(function(){
+
 // main Swiper 
 const mainSwiper = new Swiper('.mainBanner .swiper', {
   loop: true,
@@ -204,7 +207,7 @@ openBtn.addEventListener("click" , function(){
 
 // open language menu
 
-if($(window).width() > 768){
+if($(window).width() < 768){
   $(".arabic").click(function(){
     $(".lang-details").toggleClass("show-lang") ;
   })
@@ -249,12 +252,7 @@ $(".footer-title").click(function(e){
 // **************************************************************************************************
 
 
-// fire wow
 
-
-new WOW().init();
-
-// **************************************************************************************************
 
 
 // fixed nav with scroll top in mobile\
@@ -341,3 +339,13 @@ $(".li-drop").click(function (e) {
   $(".li-drop .nav-ancor").removeAttr("href")
 }
 
+
+})
+
+
+// fire wow
+
+
+new WOW().init();
+
+// **************************************************************************************************

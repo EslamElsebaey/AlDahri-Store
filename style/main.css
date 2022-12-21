@@ -817,9 +817,6 @@ nav .top-header {
   .favourite {
     display: none !important;
   }
-  .lang-details, .lang i {
-    display: none;
-  }
   .arabic span {
     display: none;
   }
