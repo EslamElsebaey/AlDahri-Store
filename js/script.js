@@ -323,3 +323,21 @@ if($(window).width()  < 768 ) {
     $(this).toggleClass("account-btn-color");
   })
 }
+
+
+
+/************************************************************************ */
+ 
+
+// nested menus
+
+if($(window).width() <= 768) {  
+$(".li-drop").click(function (e) {
+  e.preventDefault() ;
+  $(".ul-drop").slideToggle(300) ;
+  $(this).children().toggleClass("icon-rotate");
+  })
+
+  $(".li-drop .nav-ancor").removeAttr("href")
+}
+

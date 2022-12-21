@@ -50,6 +50,8 @@ html[dir=rtl] body {
   text-align: center;
   text-transform: capitalize;
   margin: 0;
+  text-align: center;
+  text-transform: capitalize;
   margin-bottom: 30px;
 }
 
@@ -351,6 +353,7 @@ img {
   margin-bottom: 8px;
 }
 .lang .lang-details a {
+  text-transform: capitalize;
   font-size: 14px;
   color: #000;
   font-weight: 300;
@@ -358,6 +361,87 @@ img {
 }
 .lang .lang-details a:hover {
   text-decoration: none;
+}
+
+.li-drop {
+  position: relative;
+}
+.li-drop > a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.li-drop > a:hover {
+  text-decoration: none;
+}
+.li-drop > a::after {
+  content: "\f107";
+  font-family: "line Awesome free";
+  font-weight: 900;
+  position: absolute;
+  font-size: 11px;
+  height: 10px;
+  top: 5px;
+  inset-inline-end: -14px;
+}
+.li-drop:hover .ul-drop {
+  opacity: 1;
+  visibility: visible;
+}
+.li-drop .ul-drop {
+  transition: all linear 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 35px;
+  z-index: 11;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  min-width: 165px;
+  background-color: #fff;
+  padding: 10px 20px;
+}
+.li-drop .ul-drop li {
+  padding-bottom: 4px;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  width: 100%;
+  text-align: center;
+}
+.li-drop .ul-drop li a:hover {
+  text-decoration: none;
+}
+.li-drop .ul-drop li a {
+  color: #000;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 300;
+}
+.li-drop .ul-drop li:last-child {
+  border-bottom: none;
+}
+.li-drop .ul-drop a {
+  font-size: 14px;
+  line-height: 32px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.account-text {
+  display: flex;
+  align-items: center;
+}
+
+.mylang-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-nav {
@@ -449,6 +533,7 @@ img {
 
 .arabic {
   font-size: 14px;
+  text-transform: capitalize;
   font-weight: 300;
   color: #808080;
 }
@@ -619,6 +704,7 @@ nav .top-header {
 .account-details a {
   color: #000;
   font-weight: 300;
+  text-transform: capitalize;
 }
 .account-details a:hover {
   text-decoration: none;
@@ -652,6 +738,51 @@ nav .top-header {
   }
 }
 @media (max-width: 768px) {
+  html[dir=ltr] .li-drop .ul-drop li a {
+    text-align: left;
+  }
+  .li-drop {
+    flex-direction: column;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .li-drop a {
+    display: block;
+    width: 100%;
+    color: #000;
+    cursor: pointer;
+  }
+  .li-drop a::after {
+    transition: all linear 0.3s;
+    position: absolute;
+    inset-inline-end: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+  }
+  .li-drop .ul-drop {
+    transition: none;
+    background-color: transparent;
+    padding: 0;
+    min-width: auto;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    padding-top: 10px;
+    transform: translateX(0);
+    display: none;
+  }
+  .li-drop .ul-drop li {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .li-drop .ul-drop li a {
+    color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: right;
+    line-height: 29px;
+  }
   .account-details {
     inset-inline-start: -44px;
     width: 115px;
@@ -717,6 +848,8 @@ nav .top-header {
     padding: 0;
   }
   .account-text {
+    display: flex;
+    align-items: center;
     padding: 0;
   }
   .cart {
@@ -922,6 +1055,7 @@ nav .top-header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .like {
@@ -1688,6 +1822,9 @@ html[dir=ltr] .message input {
     margin-top: 20px;
   }
 }
+.mainBanner .mainslider-item {
+  text-align: center;
+}
 .mainBanner .swiper-button-prev i, .mainBanner .swiper-rtl .swiper-button-next i, .mainBanner .swiper-button-next i, .mainBanner .swiper-rtl .swiper-button-prev i {
   color: #fff;
 }
@@ -1769,6 +1906,13 @@ html[dir=ltr] .message input {
   position: relative;
   padding-bottom: 80px;
 }
+.newArrivals .title-text {
+  text-align: center;
+  text-transform: capitalize;
+}
+.newArrivals .img-holder {
+  text-align: center;
+}
 
 @media only screen and (max-width: 767px) {
   .newArrivals {
@@ -1784,6 +1928,8 @@ html[dir=ltr] .message input {
 }
 .bestseller .title-text {
   color: #fff;
+  text-align: center;
+  text-transform: capitalize;
 }
 .bestseller .swiper-button-prev i, .bestseller .swiper-rtl .swiper-button-next i {
   opacity: 0.502;
@@ -1799,6 +1945,13 @@ html[dir=ltr] .message input {
 .special-offers {
   padding: 80px 0;
   position: relative;
+}
+.special-offers .title-text {
+  text-align: center;
+  text-transform: capitalize;
+}
+.special-offers .img-holder {
+  text-align: center;
 }
 
 .item-parent {

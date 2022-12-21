@@ -2,6 +2,13 @@
 .newArrivals{
     position: relative;
     padding-bottom: 80px ;
+    .title-text{
+        text-align: center;
+        text-transform: capitalize;
+    }
+    .img-holder{
+        text-align: center;
+    }
  }
 
  @include max-768 {
@@ -21,6 +28,8 @@
     background-position: 50% 233%;
     .title-text{
         color: #fff;
+        text-align: center;
+        text-transform: capitalize;
     }
     .swiper-button-prev i, .swiper-rtl .swiper-button-next i{
         opacity: 0.502;
@@ -42,10 +51,18 @@
 .special-offers{
     padding: 80px  0 ;
     position: relative;
+    .title-text{
+    text-align: center;
+    text-transform: capitalize;
+    }
+    .img-holder{
+        text-align: center;
+    }
 }
 .item-parent{
     position: relative;
 }
+
 
 
 //  *************************************************************************************************
