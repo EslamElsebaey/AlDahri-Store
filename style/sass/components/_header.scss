@@ -71,7 +71,7 @@
                 font-weight: 900;
                 position: absolute;
                 font-size: 11px;
-                height: 10px;
+                // height: 10px;
                 top: 5px;
                 inset-inline-end: -14px;
             }
@@ -423,8 +423,14 @@ nav{
     }
     }
 }
+.nav-arrow-rotate::after {
+    transform:  translateY(-50%) rotate(180deg)  !important;
+    top: 10px !important;
+}
+
 
 @media  (max-width : 768px) {
+
     html[dir="ltr"]{
         .li-drop .ul-drop li a{
             text-align: left;
@@ -454,6 +460,7 @@ nav{
         padding: 0;
         min-width: auto;
         position: static;
+        box-shadow: none;
         opacity: 1;
         visibility: visible;
         padding-top: 10px;
@@ -462,13 +469,18 @@ nav{
         li {
             margin-bottom: 0;
             border-bottom: none;
+            margin-inline-start: 10px;
+           
         }
             li a {
                 color: $black-color;
                 font-weight: 400;
-                font-size: 14px;
+                font-size: 13px;
                 text-align: right;
                 line-height: 29px;
+                &::before{
+                    content : "- " ;
+                }
             }
         }
     }

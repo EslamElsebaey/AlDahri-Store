@@ -382,7 +382,6 @@ img {
   font-weight: 900;
   position: absolute;
   font-size: 11px;
-  height: 10px;
   top: 5px;
   inset-inline-end: -14px;
 }
@@ -738,6 +737,11 @@ nav .top-header {
     order: 2;
   }
 }
+.nav-arrow-rotate::after {
+  transform: translateY(-50%) rotate(180deg) !important;
+  top: 10px !important;
+}
+
 @media (max-width: 768px) {
   html[dir=ltr] .li-drop .ul-drop li a {
     text-align: left;
@@ -767,6 +771,7 @@ nav .top-header {
     padding: 0;
     min-width: auto;
     position: static;
+    box-shadow: none;
     opacity: 1;
     visibility: visible;
     padding-top: 10px;
@@ -776,13 +781,18 @@ nav .top-header {
   .li-drop .ul-drop li {
     margin-bottom: 0;
     border-bottom: none;
+    -webkit-margin-start: 10px;
+            margin-inline-start: 10px;
   }
   .li-drop .ul-drop li a {
     color: #000000;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     text-align: right;
     line-height: 29px;
+  }
+  .li-drop .ul-drop li a::before {
+    content: "- ";
   }
   .account-details {
     inset-inline-start: -44px;
