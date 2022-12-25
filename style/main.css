@@ -56,7 +56,7 @@ html[dir=rtl] body {
 }
 
 img {
-  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: -webkit-optimize-contrast;
   -o-object-fit: cover;
      object-fit: cover;
 }

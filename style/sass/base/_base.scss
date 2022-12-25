@@ -38,7 +38,7 @@ html[dir = "rtl"] {
 
 
 img {
-  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: -webkit-optimize-contrast ;
   object-fit: cover;
 }
 
@@ -197,13 +197,13 @@ img {
   right: 15px;
   z-index: 99;
   width: 60px;
-height: 60px;
-border-radius: 30px;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: #25d366;
-animation-name: pulse;
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25d366;
+  animation-name: pulse;
 	animation-duration: 1.5s;
 	animation-timing-function: ease-out;
 	animation-iteration-count: infinite;
