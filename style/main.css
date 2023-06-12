@@ -30,12 +30,12 @@ body {
   padding: 0;
 }
 
-html[dir=rtl] body {
-  text-align: right;
-}
-
 .item-parent {
   position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .title-text {
@@ -206,27 +206,14 @@ img {
   justify-content: center;
   align-items: center;
   background-color: #25d366;
-  -webkit-animation-name: pulse;
-          animation-name: pulse;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
 }
 .fixed-whatsapp i {
   font-size: 36px;
   color: #ffffff;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 #25d366;
-  }
-  80% {
-    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
-  }
 }
 
 @keyframes pulse {
@@ -468,11 +455,6 @@ img {
   color: #808080;
   font-weight: 300;
 }
-.search-item input:-ms-input-placeholder {
-  font-size: 12px;
-  color: #808080;
-  font-weight: 300;
-}
 .search-item input::placeholder {
   font-size: 12px;
   color: #808080;
@@ -641,7 +623,7 @@ nav .closeBtn {
   z-index: 999;
   top: 0;
   background-color: #fff;
-  margin-top: -100%;
+  margin-top: -130px;
 }
 
 .scroll-top-fixed {
@@ -655,7 +637,7 @@ nav .closeBtn {
 }
 
 header {
-  transition: all linear 0.6s;
+  transition: all linear 0.4s;
 }
 
 nav {
@@ -709,6 +691,16 @@ nav .top-header {
 }
 
 .show-account-details {
+  opacity: 1;
+  visibility: visible;
+}
+
+.account-text:hover .account-details {
+  opacity: 1;
+  visibility: visible;
+}
+
+.account-text:hover .account-details {
   opacity: 1;
   visibility: visible;
 }
@@ -970,19 +962,11 @@ nav .top-header {
   .favourite:hover i {
     color: #519356;
   }
-  .lang:hover .lang-details {
-    opacity: 1;
-    visibility: visible;
-  }
   .lang-close-holder-mob .lang {
     display: none;
   }
   .search {
     display: block !important;
-  }
-  .account-text:hover .account-details {
-    opacity: 1;
-    visibility: visible;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -1375,13 +1359,7 @@ nav .top-header {
     transform: skewX(-25deg);
   }
   .saleBanner .saleItem:hover::before {
-    -webkit-animation: shine 0.75s;
     animation: shine 0.75s;
-  }
-  @-webkit-keyframes shine {
-    100% {
-      left: 125%;
-    }
   }
   @keyframes shine {
     100% {
@@ -1730,9 +1708,6 @@ html[dir=ltr] .message input {
     width: 100%;
   }
   .message input::-moz-placeholder {
-    font-size: 13px;
-  }
-  .message input:-ms-input-placeholder {
     font-size: 13px;
   }
   .message input::placeholder {

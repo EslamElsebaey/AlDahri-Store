@@ -4,7 +4,7 @@ $(document).ready(function(){
 // main Swiper 
 const mainSwiper = new Swiper('.mainBanner .swiper', {
   loop: true,
-  // autoplay: true,
+  autoplay: true,
   navigation: {
     nextEl: ' .mainBanner .swiper-button-next',
     prevEl: '.mainBanner .swiper-button-prev',
@@ -29,7 +29,7 @@ const mainSwiper = new Swiper('.mainBanner .swiper', {
 
 const bestsellerSwiper = new Swiper(' .bestseller .swiper3', {
   loop: true,
-  // autoplay: true,
+  autoplay: true,
  
   pagination: {
     el: '.bestseller .swiper-pagination',
@@ -62,7 +62,7 @@ const bestsellerSwiper = new Swiper(' .bestseller .swiper3', {
 
 const specialOffersSwiper = new Swiper(' .special-offers .swiper2', {
   loop: true,
-  // autoplay: true,
+  autoplay: true,
  
   pagination: {
     el: '.special-offers .swiper-pagination',
@@ -96,7 +96,7 @@ const specialOffersSwiper = new Swiper(' .special-offers .swiper2', {
 
 const clientsOpinions = new Swiper(' .clients-opinions .swiper5', {
   loop: true,
-  // autoplay: true,
+  autoplay: true,
  
   pagination: {
     el: '.clients-opinions .swiper-pagination',
@@ -129,7 +129,7 @@ const clientsOpinions = new Swiper(' .clients-opinions .swiper5', {
 
 const newArrivalSwiper = new Swiper(' .newArrivals .swiper4', {
   loop: true,
-  // autoplay : true , 
+  autoplay : true , 
   
   pagination: {
     el: '.newArrivals .swiper-pagination',
@@ -190,18 +190,16 @@ $(document).ready(function (){
 
 // open and close nav
 
-let closeBtn = document.querySelector(".closeBtn"); 
-let openBtn = document.querySelector(".bars"); 
-
-closeBtn.addEventListener("click" , function(){
-  $("nav").removeClass("open-nav");
-  $("body").css("overflow" , "visible") ;
-})
-
-openBtn.addEventListener("click" , function(){
+$(".bars").click(()=>{
   $("nav").addClass("open-nav");  
-  $("body").css("overflow" , "hidden") ;
+  $("body").addClass("overflow-hidden") ;
 })
+$(".closeBtn").click(()=>{
+  $("nav").removeClass("open-nav");  
+  $("body").removeClass("overflow-hidden") ;
+})
+
+
 
 // **************************************************************************************************
 
@@ -235,7 +233,7 @@ $(".toTop").click(function(){
 
 //  nested menus in footer
 
-// let element = document.querySelectorAll(".quick-drop") ;
+
 
 if($(window).width() < 768){
 $(".footer-title").click(function(e){
@@ -314,12 +312,7 @@ $(".open-search-btn").click(function(){
 // **************************************************************************************************
 
 
-if($(window).width()  < 768 ) {
-  $(".account-btn").click(function(){
-    $(".account-details").toggleClass("show-account-details");
-    $(this).toggleClass("account-btn-color");
-  })
-}
+
 
 
 
@@ -331,7 +324,6 @@ if($(window).width()  < 768 ) {
 if($(window).width() <= 768) {  
 $(".li-drop").click(function (e) {
   e.preventDefault() ;
-  console.log($(this).children())
   $(this).children(".ul-drop").slideToggle(300) ;
   $(this).children(".nav-ancor").toggleClass("nav-arrow-rotate");
   $(".li-drop").not($(this)).children(".ul-drop").slideUp(300);

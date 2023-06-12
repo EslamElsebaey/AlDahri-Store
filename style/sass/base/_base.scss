@@ -9,16 +9,14 @@ body {
   padding: 0;
 }
 
-
-html[dir = "rtl"] {
-  body{
-    text-align: right;
-  }
-}
 .item-parent{
   position: relative;
 }
 
+
+.overflow-hidden{
+  overflow: hidden;
+}
 
 .title-text {
   font-size: 18px;

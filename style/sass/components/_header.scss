@@ -330,7 +330,7 @@ left: 0;
 z-index: 999;
 top: 0;
 background-color: #fff;
-margin-top: -100%;
+margin-top: -130px;
 }
 .scroll-top-fixed {
 margin-top: 0;
@@ -342,7 +342,7 @@ margin-top: 0;
     background: transparent;
 }
 header{
-    transition: all linear .6s;
+    transition: all linear .4s;
 }
 
 nav{
@@ -402,7 +402,19 @@ nav{
  
 
 
+.account-text{
+    &:hover{
+        .account-details{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+  }
 
+  .account-text:hover .account-details{
+    opacity: 1;
+    visibility: visible;
+  }
 
 
 @media screen and ( max-width : 992px) {
@@ -688,28 +700,13 @@ nav{
             }
         }
     }
-       .lang{
-        &:hover {
-            .lang-details{
-                opacity: 1 ;
-                visibility: visible ;
-            }
-        }
-       }
        .lang-close-holder-mob .lang{
         display: none;
        }
        .search{
         display: block !important;
        }
-       .account-text{
-        &:hover{
-            .account-details{
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-      }
+      
 }
 
 @media screen and (min-width : 768px) and (max-width: 992px) {
